@@ -4,13 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.memo.modules.shared.ui.v.SplashPage
+import com.example.memo.modules.test.HomeTestPage
+import com.example.memo.modules.welcome.ui.v.WelcomePage
 import com.example.memo.ui.theme.MemoTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +21,18 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MemoTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Memo",
-                        modifier = Modifier.padding(innerPadding)
+                var showSplash by remember { mutableStateOf(true) }
+
+                if (showSplash) {
+                    SplashPage(
+                        onNavigateToWelcome = {
+                            showSplash = false
+                        }
                     )
+                } else {
+                    WelcomePage()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MemoTheme {
-        Greeting("Android")
     }
 }

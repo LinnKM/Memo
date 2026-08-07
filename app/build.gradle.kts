@@ -5,11 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.memo"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.memo"
@@ -38,6 +34,8 @@ android {
 }
 
 dependencies {
+
+    // Buitl-In Dependencies
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
@@ -53,4 +51,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+
+    // Image-Load
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 }

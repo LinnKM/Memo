@@ -9,6 +9,7 @@ data class AppColors(
     val textSecondary: Color,
     val textThird: Color,
     val textFourth: Color,
+    val textNavigation: Color,
 
     val iconPrimary: Color,
     val iconSecondary: Color,
@@ -41,6 +42,7 @@ val AppLightColor = AppColors(
     textSecondary = Color(0xFF808080),
     textThird = Color(0xFFC2C2C2),
     textFourth = Color(0xFF212121),
+    textNavigation = Color(0xFF989898),
 
     iconPrimary = Color(0xFF000000),
     iconSecondary = Color(0xFFC2C2C2),
@@ -55,6 +57,7 @@ val AppDarkColor = AppColors(
     textSecondary = Color(0xFFB3B3B3),
     textThird = Color(0xFF707070),
     textFourth = Color(0xFFE0E0E0),
+    textNavigation = Color(0xFF989898),
 
     iconPrimary = Color(0xFFFFFFFF),
     iconSecondary = Color(0xFF8A8A8A),

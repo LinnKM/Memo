@@ -23,11 +23,13 @@ import com.example.memo.modules.welcome.ui.c.AppFeatureContent
 import com.example.memo.modules.welcome.ui.c.LogoContent
 
 @Composable
-fun WelcomePage(modifier: Modifier = Modifier) {
+fun WelcomePage(
+    modifier: Modifier = Modifier,
+    onNavigateToHomeMain: () -> Unit
+) {
     Surface(
         modifier = modifier
             .fillMaxSize()
-            .navigationBarsPadding()
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -46,7 +48,9 @@ fun WelcomePage(modifier: Modifier = Modifier) {
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.padding(horizontal = 50.dp)
+                modifier = Modifier
+                    .padding(horizontal = 50.dp)
+                    .navigationBarsPadding()
             ) {
                 LogoContent()
 
@@ -58,9 +62,7 @@ fun WelcomePage(modifier: Modifier = Modifier) {
 
                 AppButton(
                     text = "Let's Started",
-                    onClick = {
-                        // TODO: Navigate to next page
-                    }
+                    onClick = onNavigateToHomeMain
                 )
 
                 27.heightBox()

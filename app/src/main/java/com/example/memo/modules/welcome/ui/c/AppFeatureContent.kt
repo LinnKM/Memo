@@ -3,6 +3,7 @@ package com.example.memo.modules.welcome.ui.c
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -45,13 +46,15 @@ private fun FeatureItem(
 ) {
     Row(
         modifier = modifier,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.Top
     ) {
         Icon(
             painter = painterResource(icon),
             contentDescription = null,
-            modifier = Modifier.size(24.dp),
-            tint = Color.Unspecified
+            tint = Color.Unspecified,
+            modifier = Modifier
+                .padding(top = 10.dp)
+                .size(24.dp),
         )
 
         10.widthBox()
